@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#101722">
+	<title>Arclight Scientific Calculator</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="yashas.css">
+</head>
+<body>
+	<main class="app-shell">
+		<header class="topbar">
+			<div class="brand"><span class="brand-mark">∑</span><div><strong>ARCLIGHT</strong><span>SCIENTIFIC CALCULATOR</span></div></div>
+			<div class="status"><span class="status-dot"></span><span id="statusText">Ready to calculate</span></div>
+		</header>
+
+		<section class="workspace">
+			<section class="calculator glass-panel" aria-label="Scientific calculator">
+				<div class="display-wrap">
+					<div class="display-meta"><span>ACTIVE EXPRESSION</span><span id="memoryLabel">MEM · 0</span></div>
+					<div id="expression" class="expression" aria-live="polite">0</div>
+					<div id="result" class="result" aria-live="polite">0</div>
+				</div>
+				<div class="mode-row"><span>ANGLE UNIT</span><div class="segmented"><button class="mode active" data-mode="DEG">DEG</button><button class="mode" data-mode="RAD">RAD</button></div><span class="keyboard-hint">Keyboard input enabled</span></div>
+				<div class="keypad">
+					<button class="key function" data-value="sin(">sin</button><button class="key function" data-value="cos(">cos</button><button class="key function" data-value="tan(">tan</button><button class="key function" data-value="ln(">ln</button><button class="key function" data-value="log(">log</button>
+					<button class="key function" data-value="sqrt(">√</button><button class="key function" data-value="cbrt(">∛</button><button class="key function" data-value="^2">x²</button><button class="key function" data-value="^">xʸ</button><button class="key function" data-value="!">n!</button>
+					<button class="key utility" data-action="clear">AC</button><button class="key utility" data-action="backspace">⌫</button><button class="key utility" data-value="(">(</button><button class="key utility" data-value=")">)</button><button class="key operator" data-value="÷">÷</button>
+					<button class="key number" data-value="7">7</button><button class="key number" data-value="8">8</button><button class="key number" data-value="9">9</button><button class="key operator" data-value="×">×</button><button class="key constant" data-value="π">π</button>
+					<button class="key number" data-value="4">4</button><button class="key number" data-value="5">5</button><button class="key number" data-value="6">6</button><button class="key operator" data-value="−">−</button><button class="key constant" data-value="e">e</button>
+					<button class="key number" data-value="1">1</button><button class="key number" data-value="2">2</button><button class="key number" data-value="3">3</button><button class="key operator" data-value="+">+</button><button class="key function" data-value="%">%</button>
+					<button class="key number zero" data-value="0">0</button><button class="key number" data-value=".">.</button><button class="key utility" data-action="ans">ANS</button><button class="key equals" data-action="equals">=</button>
+				</div>
+			</section>
+
+			<aside class="history glass-panel">
+				<div class="panel-heading"><div><span class="eyebrow">YOUR TRAIL</span><h2>Calculation history</h2></div><button id="clearHistory" class="icon-button" title="Clear history" aria-label="Clear history">⌘</button></div>
+				<div id="historyList" class="history-list"><div class="empty-history"><span>⌁</span><p>Your recent calculations<br>will appear here.</p></div></div>
+				<div class="history-footer"><span class="live-line"></span>Saved locally in this session</div>
+			</aside>
+		</section>
+		<footer><span>ARCLIGHT / 01</span><span>Precision engine · 12 significant digits</span></footer>
+	</main>
+	<script src="app.js"></script>
+</body>
+</html>
